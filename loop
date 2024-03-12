@@ -1,0 +1,123 @@
+Write a Java program to calculate the factorial of a given number. The factorial of a non-negative integer n is the product of all positive integers less than or equal to n.
+
+//Factorial
+
+import java.util.*;
+public class fact
+{
+     public static void main(String []args)
+     {
+        
+        Scanner sc=new Scanner(System.in);
+       
+        System.out.println("Enter the number: ");
+        int num=sc.nextInt();
+        int i=1,fact=1;
+        while(i<=num)
+        {
+            fact=fact*i;
+            i++;
+        }
+        System.out.println("Factorial of the number: "+fact);  
+     }   
+}
+
+Write a Java program to find the sum of the digits of a given integer. The program should take an integer as input and output the sum of its digits.
+
+//sum of digits
+
+import java.util.*;
+public class sum
+{
+     public static void main(String []args)
+     {
+         int number, digit, sum = 0; 
+        
+        Scanner sc=new Scanner(System.in);
+       
+        System.out.println("Enter the number: ");
+        int num=sc.nextInt();
+        while(num>0){
+            digit=num%10;
+            sum=sum+digit;
+            num=num/10;
+        }  
+        System.out.println("sum of Digit is "+sum);
+     }   
+}
+
+Write a Java program to determine whether a given number is prime or not. A prime number is a natural number greater than 1 that is not a product of two smaller natural numbers other than 1 and itself. Implement a program that takes an integer as input and outputs whether it is a prime number or not.
+
+//Prime Number
+
+import java.util.Scanner;
+
+public class PrimeNumber {
+
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        System.out.print("Enter a number: ");
+        int number = scanner.nextInt();
+        
+        if(isPrime(number)) {
+            System.out.println(number + " is a prime number.");
+        } else {
+            System.out.println(number + " is not a prime number.");
+        }
+        
+        scanner.close();
+    }
+    
+    public static boolean isPrime(int number) {
+        if (number <= 1) {
+            return false;
+        }
+        if (number <= 3) {
+            return true;
+        }
+        if (number % 2 == 0 || number % 3 == 0) {
+            return false;
+        }
+        for (int i = 5; i * i <= number; i += 6) {
+            if (number % i == 0 || number % (i + 2) == 0) {
+                return false;
+            }
+        }
+        return true;
+    }
+}
+
+Write a Java program to generate the Fibonacci series up to a specified limit. The program should take an integer input representing the limit and output the Fibonacci series up to that limit.
+
+//Fibonacci series
+
+import java.util.Scanner;
+
+public class FibonacciSeries {
+
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        System.out.print("Enter the limit for Fibonacci series: ");
+        int limit = sc.nextInt();
+        
+        System.out.println("Fibonacci series up to " + limit + ":");
+        printFibonacciSeries(limit);
+        
+        sc.close();
+    }
+    
+    public static void printFibonacciSeries(int limit) {
+        int n1 = 0, n2 = 1, n3;
+        System.out.print(n1 + " " + n2);
+        
+        for (int i = 2; i < limit; i++) {
+            n3 = n1 + n2;
+            if (n3 > limit) {
+                break;
+            }
+            System.out.print(" " + n3);
+            n1 = n2;
+            n2 = n3;
+        }
+    }
+}
