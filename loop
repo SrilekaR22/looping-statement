@@ -21,7 +21,7 @@ public class fact
      }   
 }
 
-Write a Java program to find the sum of the digits of a given integer. The program should take an integer as input and output the sum of its digits.
+
 
 //sum of digits
 
@@ -45,7 +45,6 @@ public class sum
      }   
 }
 
-Write a Java program to determine whether a given number is prime or not. A prime number is a natural number greater than 1 that is not a product of two smaller natural numbers other than 1 and itself. Implement a program that takes an integer as input and outputs whether it is a prime number or not.
 
 //Prime Number
 
@@ -86,7 +85,6 @@ public class PrimeNumber {
     }
 }
 
-Write a Java program to generate the Fibonacci series up to a specified limit. The program should take an integer input representing the limit and output the Fibonacci series up to that limit.
 
 //Fibonacci series
 
@@ -119,4 +117,48 @@ public class FibonacciSeries {
             n2 = n3;
         }
     }
+}
+//pattern
+
+ public class Pattern {
+
+    public static void main(String[] args) {
+        int rows = 5; 
+        
+        for (int i = 0; i < rows; i++) {
+            for (int j = 0; j <= i; j++) {
+                System.out.print("@ ");
+            }
+            System.out.println();
+        }
+    }
+}
+
+//reverse a number
+
+import java.util.Scanner;
+
+public class ReverseNumber {
+
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        System.out.print("Enter a number to reverse: ");
+        int number = scanner.nextInt();
+
+        int reversedNumber = reverse(number);
+        
+        System.out.println("Reversed number: " + reversedNumber);
+        
+        scanner.close();
+    }
+    
+    public static int reverse(int number) {
+        int reversedNumber = 0;
+        while (number != 0) {
+            int digit = number % 10;
+            reversedNumber = reversedNumber * 10 + digit;
+            number /= 10;
+        }
+        return reversedNumber;
+    }
 }
